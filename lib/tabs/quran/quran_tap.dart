@@ -361,6 +361,7 @@ class QuranTap extends StatelessWidget {
         children: [
           Image.asset("assets/images/islami_logo.png"),
           TextField(
+            style: TextStyle(color: AppColors.white),
             cursorColor: AppColors.white,
             decoration: InputDecoration(
                 filled: true,

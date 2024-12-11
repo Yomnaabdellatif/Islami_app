@@ -41,6 +41,7 @@ class _HomeScreenState extends State<HomeScreen> {
           fit: BoxFit.cover,
         ),
         Scaffold(
+          resizeToAvoidBottomInset: false,
           bottomNavigationBar: Theme(
             data: Theme.of(context).copyWith(canvasColor: AppColors.gold),
             child: BottomNavigationBar(
