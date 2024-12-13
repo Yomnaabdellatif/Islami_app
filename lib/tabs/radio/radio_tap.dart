@@ -5,6 +5,8 @@ class RadioTap extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column();
+    return Column(
+      children: [Image.asset("assets/images/islami_logo.png")],
+    );
   }
 }
