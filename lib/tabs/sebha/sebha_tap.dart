@@ -51,7 +51,7 @@ class _SebhaTapState extends State<SebhaTap> {
                     onTap: () {
                       counter++;
                       angle += 0.3;
-                      if (counter == 34) {
+                      if (counter == 33) {
                         angle = 0;
                         counter = 0;
                         index++;
