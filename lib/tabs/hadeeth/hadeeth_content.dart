@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:islami_app/model/hadeeth_model.dart';
+import 'package:islami_app/utilities/app_styles.dart';
 
-import '../../app_colors.dart';
+import '../../utilities/app_colors.dart';
 
 class HadeethContent extends StatelessWidget {
   static String routeName = "hadeth";
@@ -10,10 +11,6 @@ class HadeethContent extends StatelessWidget {
   Widget build(BuildContext context) {
     var args = ModalRoute.of(context)?.settings.arguments as HadeethModel;
 
-    TextStyle styleOfContent = TextStyle(
-      color: AppColors.gold,
-      fontSize: 20,
-    );
     return Scaffold(
       backgroundColor: AppColors.black,
       appBar: AppBar(),
@@ -34,7 +31,7 @@ class HadeethContent extends StatelessWidget {
               ),
               Text(
                 "${args.title}",
-                style: styleOfContent,
+                style: AppStyles.bold24GoldJanna,
               ),
               Expanded(
                   child: args.hadeethContent.isEmpty
@@ -51,7 +48,7 @@ class HadeethContent extends StatelessWidget {
                                 child: Text("${args.hadeethContent.join("")}",
                                     textAlign: TextAlign.center,
                                     textDirection: TextDirection.rtl,
-                                    style: styleOfContent));
+                                    style: AppStyles.bold20GoldJanna));
                           },
                           itemCount: 1,
                         ))

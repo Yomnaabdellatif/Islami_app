@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:islami_app/utilities/app_styles.dart';
 
 class RadioList extends StatelessWidget {
   String radioname;
@@ -7,29 +8,35 @@ class RadioList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var hieght = MediaQuery.of(context).size.height;
+    var width = MediaQuery.of(context).size.width;
+
     return Stack(
       alignment: Alignment.center,
       children: [
         Image.asset("assets/images/radio_stop.png"),
         Column(
           children: [
-            Text(radioname),
+            Text(
+              radioname,
+              style: AppStyles.bold20BlackJanna,
+            ),
             Container(
-              margin: EdgeInsets.all(20),
+              margin: EdgeInsets.all(hieght * 30 / 932),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Icon(
                     CupertinoIcons.heart_fill,
-                    size: 30,
+                    size: width * (35 / 430),
                   ),
                   Icon(
                     CupertinoIcons.play_arrow_solid,
-                    size: 30,
+                    size: width * (35 / 430),
                   ),
                   Icon(
                     CupertinoIcons.volume_up,
-                    size: 30,
+                    size: width * (35 / 430),
                   ),
                 ],
               ),

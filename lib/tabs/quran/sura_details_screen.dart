@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:islami_app/app_colors.dart';
+import 'package:islami_app/utilities/app_colors.dart';
 import 'package:islami_app/model/quran_model.dart';
+import 'package:islami_app/utilities/app_styles.dart';
 
 class SuraDetailsScreen extends StatefulWidget {
   static String routeName = "content";
@@ -23,16 +24,12 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
     for (int i = 1; i <= verses.length; i++) {
       ayawithnum.add(verses[i - 1] + "[$i] ");
     }
-    TextStyle styleOfContent = TextStyle(
-      color: AppColors.gold,
-      fontSize: 20,
-    );
     return Scaffold(
       backgroundColor: AppColors.black,
       appBar: AppBar(
           title: Text(
         "${args.suraEnglishName}",
-        style: styleOfContent,
+        style: AppStyles.bold20GoldJanna,
       )),
       body: Stack(
         alignment: Alignment.topCenter,
@@ -51,7 +48,7 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
               ),
               Text(
                 "${args.suraArabicName}",
-                style: styleOfContent,
+                style: AppStyles.bold24GoldJanna,
               ),
               Expanded(
                   child: verses.isEmpty
@@ -68,7 +65,8 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
                                 child: Text("${ayawithnum.join("")}",
                                     textAlign: TextAlign.center,
                                     textDirection: TextDirection.rtl,
-                                    style: styleOfContent));
+                                  style: AppStyles.bold20GoldJanna,
+                                ));
                           },
                           itemCount: 1,
                         ))

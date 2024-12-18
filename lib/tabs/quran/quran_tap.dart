@@ -1,18 +1,25 @@
 import 'package:flutter/material.dart';
-import 'package:islami_app/app_colors.dart';
+import 'package:islami_app/utilities/app_colors.dart';
 import 'package:islami_app/model/quran_model.dart';
 import 'package:islami_app/tabs/quran/sura_details_screen.dart';
 import 'package:islami_app/tabs/quran/sura_list.dart';
+import 'package:islami_app/utilities/app_styles.dart';
 
 class QuranTap extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    var hieght = MediaQuery.of(context).size.height;
+    var width = MediaQuery.of(context).size.width;
     return Container(
-      margin: EdgeInsets.all(12),
+      margin: EdgeInsets.all(hieght * 0.03),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Image.asset("assets/images/islami_logo.png"),
+          Image.asset(
+            "assets/images/islami_logo.png",
+            height: hieght * 0.18,
+            width: width * 0.67,
+          ),
           TextField(
             style: TextStyle(color: AppColors.white),
             cursorColor: AppColors.white,
@@ -20,7 +27,7 @@ class QuranTap extends StatelessWidget {
                 filled: true,
                 fillColor: AppColors.blackBG,
                 hintText: "sura name",
-                hintStyle: TextStyle(color: AppColors.white),
+                hintStyle: AppStyles.bold16WhiteJanna,
                 prefixIcon: ImageIcon(
                   AssetImage("assets/images/quraan_icon.png"),
                   color: AppColors.gold,
@@ -37,23 +44,18 @@ class QuranTap extends StatelessWidget {
                     ))),
           ),
           SizedBox(
-            height: 10,
+            height: hieght * 0.001,
           ),
           Text(
-            "Most Recently",
-            style: TextStyle(
-                color: AppColors.white,
-                fontSize: 16,
-                fontWeight: FontWeight.bold),
-          ),
+            "Most Recently", style: AppStyles.bold16WhiteJanna),
           SizedBox(
             height: 10,
           ),
           Container(
-            padding: EdgeInsets.all(11),
             decoration: BoxDecoration(
                 color: AppColors.gold, borderRadius: BorderRadius.circular(20)),
-            height: 120,
+            height: hieght * 0.16,
+            width: width * 0.53,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
@@ -62,28 +64,23 @@ class QuranTap extends StatelessWidget {
                   children: [
                     Text(
                       "sura english",
-                      style: TextStyle(
-                          color: AppColors.black,
-                          fontSize: 24,
-                          fontWeight: FontWeight.bold),
+                      style: AppStyles.bold24BlackJanna,
                     ),
                     Text(
                       "sura arabic",
-                      style: TextStyle(
-                          color: AppColors.black,
-                          fontSize: 24,
-                          fontWeight: FontWeight.bold),
+                      style: AppStyles.bold24BlackJanna,
                     ),
                     Text(
                       "verses",
-                      style: TextStyle(
-                          color: AppColors.black,
-                          fontSize: 14,
-                          fontWeight: FontWeight.bold),
+                      style: AppStyles.bold14BlackJanna,
                     )
                   ],
                 ),
-                Image.asset("assets/images/quraan_card.png")
+                Image.asset(
+                  "assets/images/quraan_card.png",
+                  width: width * 0.35,
+                  height: hieght * 0.14,
+                )
               ],
             ),
           ),
@@ -92,10 +89,7 @@ class QuranTap extends StatelessWidget {
           ),
           Text(
             "sura list",
-            style: TextStyle(
-                color: AppColors.white,
-                fontSize: 16,
-                fontWeight: FontWeight.bold),
+            style: AppStyles.bold16WhiteJanna,
           ),
           Expanded(
               child: ListView.separated(

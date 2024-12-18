@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:islami_app/app_colors.dart';
+import 'package:islami_app/utilities/app_colors.dart';
+import 'package:islami_app/utilities/app_styles.dart';
 
 import '../../model/quran_model.dart';
 
@@ -19,7 +20,7 @@ class SuraList extends StatelessWidget {
               Image.asset("assets/images/surah_number.png"),
               Text(
                 "${quranModel.index + 1}",
-                style: TextStyle(color: AppColors.white),
+                style: AppStyles.bold20WhiteJanna,
               )
             ],
           ),
@@ -32,18 +33,12 @@ class SuraList extends StatelessWidget {
               children: [
                 Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
                   Text("${quranModel.suraEnglishName}",
-                      style: TextStyle(
-                          color: AppColors.white,
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold)),
+                      style: AppStyles.bold20WhiteJanna),
                   Text("${quranModel.numOfVerses} verses",
-                      style: TextStyle(color: AppColors.white, fontSize: 16))
+                      style: AppStyles.bold14WhiteJanna),
                 ]),
                 Text("${quranModel.suraArabicName}",
-                    style: TextStyle(
-                        color: AppColors.white,
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold))
+                    style: AppStyles.bold20WhiteJanna),
               ],
             ),
           ),
