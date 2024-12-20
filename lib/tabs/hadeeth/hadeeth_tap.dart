@@ -11,29 +11,29 @@ class HadeethTap extends StatefulWidget {
 }
 
 class _HadeethTapState extends State<HadeethTap> {
-  List<HadeethModel> hadeethlist = [];
+  List<HadeethModel> hadeethList = [];
 
   @override
   Widget build(BuildContext context) {
-    var hieght = MediaQuery.of(context).size.height;
+    var height = MediaQuery.of(context).size.height;
     var width = MediaQuery.of(context).size.width;
-    if (hadeethlist.isEmpty) {
+    if (hadeethList.isEmpty) {
       loadHadeethFile();
     }
     return Container(
-      margin: EdgeInsets.only(top: hieght * 0.03, bottom: hieght * (20 / 932)),
+      margin: EdgeInsets.only(top: height * 0.03, bottom: height * (20 / 932)),
       child: Column(
         children: [
           Image.asset(
             "assets/images/islami_logo.png",
-            height: hieght * 0.18,
+            height: height * 0.18,
             width: width * 0.67,
           ),
           Expanded(
             child: CarouselSlider.builder(
-                itemCount: hadeethlist.length,
+                itemCount: hadeethList.length,
                 itemBuilder: (context, int itemIndex, int pageViewIndex) {
-                  return hadeethlist.isEmpty
+                  return hadeethList.isEmpty
                       ? Center(child: CircularProgressIndicator())
                       : InkWell(
                           onTap: () {
@@ -41,8 +41,8 @@ class _HadeethTapState extends State<HadeethTap> {
                                 HadeethContent.routeName,
                                 arguments: HadeethModel(
                                     hadeethContent:
-                                        hadeethlist[itemIndex].hadeethContent,
-                                    title: hadeethlist[itemIndex].title));
+                                        hadeethList[itemIndex].hadeethContent,
+                                    title: hadeethList[itemIndex].title));
                           },
                           child: Container(
                               padding: EdgeInsets.all(23),
@@ -54,13 +54,13 @@ class _HadeethTapState extends State<HadeethTap> {
                               child: Column(
                                 children: [
                                   Text(
-                                    "${hadeethlist[itemIndex].title}",
+                                    "${hadeethList[itemIndex].title}",
                                     style: AppStyles.bold24BlackJanna,
                                   ),
                                   Expanded(
                                       child: Text(
                                     textDirection: TextDirection.rtl,
-                                    "${hadeethlist[itemIndex].hadeethContent.join("")}",
+                                    "${hadeethList[itemIndex].hadeethContent.join("")}",
                                     style: AppStyles.bold16BlackJanna,
                                   ))
                                 ],
@@ -68,7 +68,7 @@ class _HadeethTapState extends State<HadeethTap> {
                         );
                 },
                 options: CarouselOptions(
-                  height: hieght * 0.66,
+                  height: height * 0.66,
                   aspectRatio: 16 / 9,
                   viewportFraction: 0.75,
                   initialPage: 0,
@@ -93,7 +93,7 @@ class _HadeethTapState extends State<HadeethTap> {
       hadeethLines.removeAt(0);
       HadeethModel hadeethModel =
           HadeethModel(hadeethContent: hadeethLines, title: title);
-      hadeethlist.add(hadeethModel);
+      hadeethList.add(hadeethModel);
       setState(() {});
     }
   }

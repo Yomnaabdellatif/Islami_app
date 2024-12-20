@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:islami_app/utilities/app_colors.dart';
 import 'package:islami_app/utilities/app_styles.dart';
 
 import '../../model/quran_model.dart';
 
 class SuraList extends StatelessWidget {
   QuranModel quranModel;
+
+  // int index;
   SuraList({required this.quranModel});
 
   @override
@@ -19,7 +20,7 @@ class SuraList extends StatelessWidget {
             children: [
               Image.asset("assets/images/surah_number.png"),
               Text(
-                "${quranModel.index + 1}",
+                "${quranModel.index}",
                 style: AppStyles.bold20WhiteJanna,
               )
             ],

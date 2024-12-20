@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:islami_app/utilities/app_colors.dart';
 import 'package:islami_app/model/quran_model.dart';
+import 'package:islami_app/utilities/app_colors.dart';
 import 'package:islami_app/utilities/app_styles.dart';
 
 class SuraDetailsScreen extends StatefulWidget {
@@ -77,6 +77,14 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
     );
   }
 
+  // void loadSuraFile(String fileName) async {
+  //   String suraContent =
+  //       await rootBundle.loadString("assets/files/${fileName }");
+  //   List<String> suraLines = suraContent.split("\n");
+  //   verses = suraLines;
+  //
+  //   setState(() {});
+  // }
   void loadSuraFile(int index) async {
     String suraContent =
         await rootBundle.loadString("assets/files/${index + 1}.txt");
