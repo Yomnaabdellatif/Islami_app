@@ -48,9 +48,15 @@ dev_dependencies:
   flutter_lints: ^3.0.0
 
   flutter_native_splash: ^2.4.1
+  carousel_slider: ^5.0.0
+  shared_preferences: ^2.3.3
 
 flutter_native_splash:
   background_image: "assets/images/Splash Screen.png"
+  android_12:
+    color: "#202020"
+    branding: "assets/images/branding_icon.png"
+    image: "assets/images/splash_icon.png"
 
   android: true
   ios: true
@@ -70,6 +76,7 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/images/
+    - assets/files/
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 
@@ -84,10 +91,16 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
+  fonts:
+
+    - family: Janna
+      fonts:
+        - asset: assets/Fonts/Janna LT Bold.ttf
+
+    - family: Kamali
+      fonts:
+        - asset: assets/Fonts/KamaliRegular-pg81r.ttf
+
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro
